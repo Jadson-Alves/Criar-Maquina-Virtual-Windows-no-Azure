@@ -50,7 +50,7 @@ $adminCreds  = New-Object System.Management.Automation.PSCredential ("$adminUser
 
 # Criando IP público e interface de rede 
 $pip = New-AzPublicIpAddress -Name $pipName -ResourceGroupName $ResourceGroup -Location $location -AllocationMethod Static 
-$nic = New-AzNetworkInterface -Name $nicName -ResourceGroupName $ResourceGroup -Location $location `-SubnetId $Subnet.Id -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id
+$nic = New-AzNetworkInterface -Name $nicName -ResourceGroupName $ResourceGroup -Location $location -SubnetId $Subnet.Id -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id
 
 # Adicionando as configurações da máquina virtual
 $vmConfig = New-AzVMConfig -VMName $vmName -VMSize $vmSize
